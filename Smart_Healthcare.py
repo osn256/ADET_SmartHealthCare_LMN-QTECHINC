@@ -1,4 +1,4 @@
-import pandas as pd                             # Import  
+import pandas as pd                             
 import numpy as np
 from datetime import datetime, timedelta
 
@@ -9,9 +9,9 @@ data = []
 
 for _ in range(num_records):
     # Decide randomly whether to include ECG data (e.g., 60% chance)
-    include_ecg = np.random.rand() < 0.4
+    include_ecg = np.random.rand() < 0.4    
 
-    record = {
+    record = {      
         "timestamp": datetime.now() - timedelta(minutes=np.random.randint(0, 1440)),        # Random timestamp in the last 24 hours
         "patient_id": f"PAT{np.random.randint(100, 999)}",                                  # Random patient ID
         "heart_rate": str(np.random.randint(60, 100)) + "bpm",                              # Normal heart rate range
@@ -27,8 +27,8 @@ for _ in range(num_records):
 df = pd.DataFrame(data) 
 
 # Save dataset
-df.to_csv("healthcare_data.csv", index=False)           # 
-df.to_json("healthcare_data.json", orient="records")    # 
+df.to_csv("healthcare_data.csv", index=False)            
+df.to_json("healthcare_data.json", orient="records")     
 
 # Display first few rows
 print(df.head())
