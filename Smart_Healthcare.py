@@ -1,5 +1,5 @@
-import pandas as pd                             
-import numpy as np
+import pandas as pd     # Imports                            
+import numpy as np      # Numpy Imports
 from datetime import datetime, timedelta
 
 num_records = 200  # Adjust this number as needed
@@ -18,8 +18,8 @@ for _ in range(num_records):
         "blood_pressure": f"{np.random.randint(100, 140)}/{np.random.randint(60, 90)}",     # Systolic/Diastolic range
         "oxygen_level": np.random.randint(95, 100),                                         # Oxygen saturation in normal range
         "body_temp": round(np.random.uniform(36.0, 38.0), 1),                               # Body temperature in Celsius
-        "ECG_signal_strength": round(np.random.uniform(0.8, 1.0), 2) if include_ecg else None,  # 
-        "ECG_peak_count": np.random.randint(12, 20) if include_ecg else None,               #   
+        "ECG_signal_strength": round(np.random.uniform(0.8, 1.0), 2) if include_ecg else None,   
+        "ECG_peak_count": np.random.randint(12, 20) if include_ecg else None,                  
     }
     data.append(record)
 
